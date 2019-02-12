@@ -55,8 +55,8 @@ If you don't know how to generate a key for yourself,
 If you want to deploy app from CI to the staging/production host then you must generate RSA keys for CircleCI.
 
 ```shell
-$ ssh-keygen -t rsa -b 4096 -N "" -C "circle_ci" -f ./apps/elixir-build-server/circle_ci
-$ ssh-keygen -t rsa -b 4096 -N "" -C "circle_ci" -f ./apps/phoenix-website/circle_ci
+$ ssh-keygen -m PEM -t rsa -b 4096 -N "" -C "circle_ci" -f ./apps/elixir-build-server/circle_ci
+$ ssh-keygen -m PEM -t rsa -b 4096 -N "" -C "circle_ci" -f ./apps/phoenix-website/circle_ci
 ```
 
 Add `circle_ci.pub` public key to your app playbook for the role `user`:
